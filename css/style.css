@@ -499,6 +499,11 @@ body {
   .social-links { gap: 0.75rem; }
   .social-link { width: 38px; height: 38px; }
   .location { font-size: 0.6rem; letter-spacing: 0.1em; }
+  .splash-title { font-size: clamp(2rem, 5vw, 3rem); }
+  .splash-logo { font-size: 1.4rem; }
+  .splash-subtitle { font-size: 0.85rem; }
+  .splash-hint { font-size: 0.75rem; max-width: 300px; }
+  .enter-btn { padding: 1rem 2.5rem; font-size: 1.1rem; }
 }
 
 /* Mobile phones */
@@ -551,6 +556,13 @@ body {
     gap: 0.4rem;
   }
   .uk-flag svg { width: 16px; height: 11px; }
+  .splash-title { font-size: 1.8rem; }
+  .splash-logo { font-size: 1.2rem; letter-spacing: 0.3em; margin-bottom: 1.5rem; }
+  .splash-line { margin-bottom: 1.5rem; }
+  .splash-subtitle { font-size: 0.75rem; margin-bottom: 2rem; letter-spacing: 0.12em; }
+  .splash-hint { font-size: 0.7rem; max-width: 260px; }
+  .enter-btn { padding: 0.9rem 2rem; font-size: 1rem; }
+  .music-toggle { bottom: 3.5rem; right: 1rem; width: 36px; height: 36px; font-size: 0.9rem; }
 }
 
 /* Very small phones */
@@ -560,6 +572,10 @@ body {
   .countdown-sep { font-size: 1.3rem; }
   .notify-form { max-width: 260px; }
   .subtitle { font-size: 0.75rem; }
+  .splash-title { font-size: 1.5rem; }
+  .splash-logo { font-size: 1rem; }
+  .splash-hint { font-size: 0.65rem; max-width: 240px; }
+  .enter-btn { padding: 0.8rem 1.8rem; font-size: 0.9rem; }
 }
 
 /* Short screens (landscape phones) */
@@ -573,6 +589,11 @@ body {
   .countdown { margin-bottom: 1.5rem; }
   .countdown-number { font-size: 2rem; min-width: 55px; }
   .notify-section { margin-bottom: 0.5rem; }
+  .splash-title { font-size: 1.8rem; }
+  .splash-logo { margin-bottom: 1rem; }
+  .splash-line { margin-bottom: 1rem; }
+  .splash-subtitle { margin-bottom: 1.5rem; }
+  .splash-hint { font-size: 0.7rem; margin-top: 1rem; }
 }
 
 /* ══════ DEVELOPER CREDIT ══════ */
