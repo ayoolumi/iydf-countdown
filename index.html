@@ -12,6 +12,32 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Background Music -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="audio/ikale-song.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Cinematic Splash Screen -->
+  <div id="splashScreen" class="splash-screen">
+    <div class="splash-overlay"></div>
+    <div class="splash-content">
+      <div class="splash-logo">IYDF</div>
+      <div class="splash-line"></div>
+      <div class="splash-title">Ilutitun Youth<br>Development Forum</div>
+      <div class="splash-subtitle">Ilutitun &middot; Okitipupa LGA &middot; Ondo State</div>
+      <button id="enterBtn" class="enter-btn">
+        <span class="enter-icon">&#9654;</span>
+        <span>Enter</span>
+      </button>
+      <div class="splash-hint">Please click to view the countdown page and register your email</div>
+    </div>
+  </div>
+
+  <!-- Music Toggle Button -->
+  <button id="musicToggle" class="music-toggle" style="display:none;">
+    <span id="musicIcon">&#9835;</span>
+  </button>
+
   <div class="slideshow" id="slideshow">
     <div class="slide active"><img src="images/1.JPEG" alt="Ilutitun Community"></div>
     <div class="slide"><img src="images/2.JPEG" alt="Ilutitun Community"></div>

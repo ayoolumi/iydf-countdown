@@ -608,3 +608,157 @@ body {
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
+
+/* ══════ SPLASH SCREEN ══════ */
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a0a;
+  background-image: url('../images/9.jpeg');
+  background-size: cover;
+  background-position: center;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.splash-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.splash-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+}
+
+.splash-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  animation: splashFadeIn 1.5s ease;
+}
+
+@keyframes splashFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.splash-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5em;
+  color: rgba(197, 150, 27, 0.6);
+  margin-bottom: 2rem;
+}
+
+.splash-line {
+  width: 60px;
+  height: 2px;
+  background: #C5961B;
+  margin: 0 auto 2rem;
+}
+
+.splash-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+.splash-subtitle {
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 3rem;
+}
+
+.enter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.2rem 3rem;
+  background: rgba(197, 150, 27, 0.15);
+  border: 2px solid #C5961B;
+  border-radius: 50px;
+  color: #C5961B;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.enter-btn:hover {
+  background: rgba(197, 150, 27, 0.1);
+  border-color: #C5961B;
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(197, 150, 27, 0.2);
+}
+
+.enter-icon {
+  font-size: 0.8rem;
+}
+
+.splash-hint {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* ══════ MUSIC TOGGLE ══════ */
+.music-toggle {
+  position: fixed;
+  bottom: 4.5rem;
+  right: 1.5rem;
+  z-index: 100;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #C5961B;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.music-toggle:hover {
+  background: rgba(197, 150, 27, 0.15);
+  transform: scale(1.1);
+}
+
+.music-toggle.muted {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Pulsing animation when music is playing */
+@keyframes musicPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(197, 150, 27, 0.3); }
+  50% { box-shadow: 0 0 0 8px rgba(197, 150, 27, 0); }
+}
+
+.music-toggle.playing {
+  animation: musicPulse 2s ease infinite;
+}

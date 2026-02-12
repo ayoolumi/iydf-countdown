@@ -136,3 +136,54 @@ document.getElementById("notifyForm").addEventListener("submit", function(e) {
       success.style.display = "block";
     });
 });
+
+
+// ═══════════════════════════════════════
+// SPLASH SCREEN & MUSIC
+// ═══════════════════════════════════════
+var splashScreen = document.getElementById("splashScreen");
+var enterBtn = document.getElementById("enterBtn");
+var bgMusic = document.getElementById("bgMusic");
+var musicToggle = document.getElementById("musicToggle");
+var musicIcon = document.getElementById("musicIcon");
+var isMuted = false;
+
+// Set volume
+bgMusic.volume = 0.4;
+
+// Enter button - start music and reveal page
+enterBtn.addEventListener("click", function() {
+  // Start music
+  bgMusic.play().then(function() {
+    musicToggle.style.display = "flex";
+    musicToggle.classList.add("playing");
+  }).catch(function() {
+    // Music blocked, still reveal page
+    musicToggle.style.display = "flex";
+  });
+  
+  // Fade out splash screen
+  splashScreen.classList.add("hidden");
+  
+  // Remove splash from DOM after animation
+  setTimeout(function() {
+    splashScreen.style.display = "none";
+  }, 1200);
+});
+
+// Music toggle button
+musicToggle.addEventListener("click", function() {
+  if (isMuted) {
+    bgMusic.play();
+    musicIcon.innerHTML = "\u266B";
+    musicToggle.classList.remove("muted");
+    musicToggle.classList.add("playing");
+    isMuted = false;
+  } else {
+    bgMusic.pause();
+    musicIcon.innerHTML = "\u2716";
+    musicToggle.classList.add("muted");
+    musicToggle.classList.remove("playing");
+    isMuted = true;
+  }
+});
